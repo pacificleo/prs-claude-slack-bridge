@@ -9,7 +9,7 @@ services:
       - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
     volumes:
       # Mount Claude CLI credentials (read-only); CLI writes session data inside the container
-      - ${HOME}/.claude/.credentials.json:/home/appuser/.claude/.credentials.json:ro
+      - ${HOME}/.claude/.credentials.json:/home/appuser/.claude/.credentials.json
       # Mount all projects so claude -p can run from the correct project directory
       - ${PROJECTS_DIR}:/projects
     restart: unless-stopped
